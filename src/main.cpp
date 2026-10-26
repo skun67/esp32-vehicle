@@ -1,5 +1,14 @@
 #include <Arduino.h>
+#include <Wire.h>
+#include "Sensors/Imu.h"
 
-void setup() {}
+void setup() {
+    Serial.begin(115200);
+    Wire.begin();
 
-void loop() {}
+    setupImu();
+}
+
+void loop() {
+    loopImu();
+}
